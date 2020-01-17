@@ -12,13 +12,8 @@ else
     echo "failed to change directory"
     return
   }
-  if [ -e link ];then
-    rm -rf link
-  fi
+  rm -rf link launch
   ln -s $AW_PARAM_PATH link
-  if [ -e launch ];then
-    rm -rf launch
-  fi
   mkdir -p launch
   output_file=./launch/param.launch
   target_files=`find ./link/* -name *.yaml`
